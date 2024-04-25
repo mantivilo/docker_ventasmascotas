@@ -1,4 +1,6 @@
 package ventasmascotas.ventasmascotas.model;
+import org.springframework.hateoas.RepresentationModel;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "venta")
-public class Venta {
+public class Venta extends RepresentationModel<Venta> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "venta_seq")
     @SequenceGenerator(name = "venta_seq", sequenceName = "venta_seq", allocationSize = 1)
